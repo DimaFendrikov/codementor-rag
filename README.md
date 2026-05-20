@@ -2,7 +2,7 @@
 
 CodeMentor RAG is a small FastAPI application that helps users understand GitHub repositories.
 
-The app clones a repository, reads useful files, splits them into chunks, creates embeddings, stores them in ChromaDB, and answers questions using an LLM with retrieved repository context.
+The application indexes a public GitHub repository, reads its source files and documentation, splits the content into chunks, creates embeddings, stores them in a local vector database ChromaDB, and uses an LLM to answer questions based on the retrieved repository context.
 
 ## Features
 
