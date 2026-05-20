@@ -74,7 +74,7 @@ http://127.0.0.1:8000/app
 
 ### Main Interface
 
-![Main Interface](screenshots/Main Interface.png)
+![Main Interface](screenshots/Main-Interface.png)
 
 ### Repository Answer Example
 
