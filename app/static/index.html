@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeMentor RAG</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">CM</div>
+                <div>
+                    <h1>CodeMentor RAG</h1>
+                    <p>Learn GitHub repositories faster</p>
+                </div>
+            </div>
+
+            <section class="panel">
+                <h2>Repository</h2>
+                <label for="repoUrl">GitHub URL</label>
+                <input id="repoUrl" type="text" placeholder="https://github.com/user/repository" />
+                <button id="indexRepoBtn" class="primary-btn">Index repository</button>
+                <div id="indexStatus" class="status-box hidden"></div>
+            </section>
+
+            <section class="panel">
+                <h2>Active repository</h2>
+                <label for="repoSelect">Choose repository</label>
+                <select id="repoSelect">
+                    <option value="">No repositories yet</option>
+                </select>
+                <button id="refreshReposBtn" class="secondary-btn">Refresh list</button>
+                <div id="activeRepoInfo" class="small-info"></div>
+            </section>
+
+            <section class="panel">
+                <h2>Settings</h2>
+                <label for="topK">Retrieved chunks</label>
+                <input id="topK" type="number" min="1" max="15" value="5" />
+
+                <label class="checkbox-row">
+                    <input id="includeCheckQuestion" type="checkbox" />
+                    Add a check question after answers
+                </label>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <header class="hero">
+                <div>
+                    <h2>Understand unfamiliar codebases with RAG</h2>
+                    <p>Index a GitHub repository, ask questions about the code, and generate small quizzes to check your understanding.</p>
+                </div>
+                <div class="hero-badge">FastAPI · ChromaDB · OpenAI</div>
+            </header>
+
+            <section class="tabs">
+                <button class="tab-btn active" data-tab="chatTab">Ask</button>
+                <button class="tab-btn" data-tab="quizTab">Quiz</button>
+            </section>
+
+            <section id="chatTab" class="tab-content active">
+                <div class="card">
+                    <h3>Ask the repository</h3>
+                    <p>Example: What does this project do? Where is model training implemented? Which dependencies are used?</p>
+                    <textarea id="questionInput" rows="4" placeholder="Write a question about the active repository..."></textarea>
+                    <button id="askBtn" class="primary-btn">Ask</button>
+                </div>
+                <div id="answerArea" class="result-area hidden"></div>
+            </section>
+
+            <section id="quizTab" class="tab-content">
+                <div class="card">
+                    <h3>Generate a quiz</h3>
+                    <p>The quiz is created from the retrieved repository context.</p>
+
+                    <label for="quizTopic">Topic</label>
+                    <input id="quizTopic" type="text" value="project overview" placeholder="model evaluation, API structure, setup, architecture" />
+
+                    <div class="grid-two">
+                        <div>
+                            <label for="quizDifficulty">Difficulty</label>
+                            <select id="quizDifficulty">
+                                <option value="easy">easy</option>
+                                <option value="medium" selected>medium</option>
+                                <option value="hard">hard</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="quizNumQuestions">Questions</label>
+                            <input id="quizNumQuestions" type="number" min="1" max="10" value="3" />
+                        </div>
+                    </div>
+
+                    <button id="generateQuizBtn" class="primary-btn">Generate quiz</button>
+                </div>
+                <div id="quizArea" class="result-area hidden"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
