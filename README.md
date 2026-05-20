@@ -70,6 +70,19 @@ Open the web interface:
 ```text
 http://127.0.0.1:8000/app
 ```
+## Screenshots
+
+### Main Interface
+
+![Main Interface](docs/screenshots/main-interface.png)
+
+### Repository Answer Example
+
+![Repository Answer Example](docs/screenshots/answer-example.png)
+
+### Quiz Example
+
+![Quiz Example](docs/screenshots/quiz-example.png)
 
 ## Notes
 
