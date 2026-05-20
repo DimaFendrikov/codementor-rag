@@ -74,15 +74,15 @@ http://127.0.0.1:8000/app
 
 ### Main Interface
 
-![Main Interface](docs/screenshots/main-interface.png)
+![Main Interface](screenshots/main-interface.png)
 
 ### Repository Answer Example
 
-![Repository Answer Example](docs/screenshots/answer-example.png)
+![Repository Answer Example](screenshots/answer-example.png)
 
 ### Quiz Example
 
-![Quiz Example](docs/screenshots/quiz-example.png)
+![Quiz Example](screenshots/quiz-example.png)
 
 ## Notes
 
